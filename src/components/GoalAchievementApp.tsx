@@ -6,8 +6,8 @@ import { PlusCircle, CheckCircle2, Target, Brain, Activity, Calendar } from 'luc
 const TeachingTip = ({ title, content }: { title: string; content: string }) => (
   <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg mb-6 relative overflow-hidden animate-float font-display">
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 animate-shimmer"></div>
-    <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-2">{title}</h3>
-    <p className="text-sm text-purple-700 dark:text-purple-300 font-body">{content}</p>
+    <h3 className="text-[25px] font-semibold text-purple-800 dark:text-purple-200 mb-2">{title}</h3>
+    <p className="text-lg text-purple-700 dark:text-purple-300 font-body">{content}</p>
   </div>
 );
 
@@ -34,8 +34,8 @@ const GoalAchievementApp = () => {
 
   const teachingTips = {
     1: {
-      title: "The Power of Contrast",
-      content: "Your brain needs contrast - the dream versus the nightmare. By vividly describing both outcomes, your mind starts to crave the ideal because staying the same becomes unbearable."
+      title: "Leveraging Contrast for Change",
+      content: "Your mind thrives on comparison—imagining the best-case scenario against the worst. When you clearly outline both possibilities, the thought of staying stuck becomes intolerable, motivating you to pursue the better path."
     },
     2: {
       title: "Connect With Your Future Self",
@@ -43,7 +43,7 @@ const GoalAchievementApp = () => {
     },
     3: {
       title: "Habits Shape Your Future",
-      content: "Remember: Goals are destinations, habits are the vehicle. Focus on building habits that make your goals a natural byproduct of who you're becoming."
+      content: "Goals are the compass, good habits the wind, and bad habits the anchor. Let the wind carry you forward."
     },
     4: {
       title: "The FEAR Formula",
@@ -80,13 +80,13 @@ const GoalAchievementApp = () => {
 
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-8 text-purple-800 dark:text-purple-200 font-display bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
-          Neurocognitive Goal Achievement
+          Brainwash Your Way to Success
         </h1>
 
         <TeachingTip {...teachingTips[currentStep]} />
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          {['Set Your Outcomes', 'Future Self Vision', 'Build Habits', 'Track Progress'].map((title, index) => (
+          {['Know Your Outcomes', 'Future Self Vision', 'Shift Your Habits', 'Track Progress'].map((title, index) => (
             <div
               key={index}
               className={`cursor-pointer rounded-lg p-4 transition-all duration-500 hover:shadow-lg transform hover:-translate-y-1 font-display ${
@@ -112,10 +112,10 @@ const GoalAchievementApp = () => {
             <div className="space-y-6">
               <div>
                 <label className="block text-lg font-display font-medium mb-2 text-purple-800 dark:text-purple-200">
-                  Describe Your Ideal Future
+                  Describe Your Best Case Scenario
                 </label>
                 <textarea
-                  placeholder="Paint a vivid picture of your perfect outcome..."
+                  placeholder="Paint a vivid picture of the best-case scenario, including specific, measurable details that clearly define what success looks like and how you'll know you've achieved it...."
                   value={goalData.idealOutcome}
                   onChange={(e) => setGoalData(prev => ({...prev, idealOutcome: e.target.value}))}
                   className="w-full h-32 p-4 rounded-lg border-2 border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 transition-all duration-300 font-body"
@@ -123,10 +123,10 @@ const GoalAchievementApp = () => {
               </div>
               <div>
                 <label className="block text-lg font-display font-medium mb-2 text-purple-800 dark:text-purple-200">
-                  Describe Your Nightmare Scenario
+                  Describe Your Absolute Worst Case Scenario
                 </label>
                 <textarea
-                  placeholder="What happens if nothing changes..."
+                  placeholder="What happens if nothing changes, who will you become..."
                   value={goalData.leastDesiredOutcome}
                   onChange={(e) => setGoalData(prev => ({...prev, leastDesiredOutcome: e.target.value}))}
                   className="w-full h-32 p-4 rounded-lg border-2 border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 transition-all duration-300 font-body"
@@ -209,7 +209,7 @@ const GoalAchievementApp = () => {
           <StepContainer>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
-                <h3 className="text-xl font-display font-medium text-purple-800 dark:text-purple-200">Build Positive Habits</h3>
+                <h3 className="text-xl font-display font-medium text-purple-800 dark:text-purple-200">New Habits & Beliefs</h3>
                 <div className="space-y-3">
                   {goalData.positiveHabits.map((habit, index) => (
                     <div
@@ -233,13 +233,13 @@ const GoalAchievementApp = () => {
                     }}
                     className="w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 font-display"
                   >
-                    Add Positive Habit
+                    Add New Habits & Beliefs
                   </button>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-display font-medium text-purple-800 dark:text-purple-200">Transform Negative Habits</h3>
+                <h3 className="text-xl font-display font-medium text-purple-800 dark:text-purple-200">Transform Old Habits</h3>
                 <div className="space-y-3">
                   {goalData.negativeHabits.map((habit, index) => (
                     <div
